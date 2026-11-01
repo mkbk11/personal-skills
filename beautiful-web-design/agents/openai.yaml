@@ -1,0 +1,4 @@
+interface:
+  display_name: "Beautiful Web Design"
+  short_description: "Design polished responsive websites and app interfaces"
+  default_prompt: "Use $beautiful-web-design to create a polished, mobile-first web interface."
