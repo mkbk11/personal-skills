@@ -1,0 +1,4 @@
+interface:
+  display_name: "Photo Coach · 私人摄影导师"
+  short_description: "尼康器材实拍建议、构图点评、RAW 后期修图与旅行摄影训练"
+  default_prompt: "Use $photo-coach to critique my photo or plan a Nikon shooting session with specific settings and exercises."
