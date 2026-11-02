@@ -1,0 +1,4 @@
+interface:
+  display_name: "论文深度阅读与科研启发"
+  short_description: "系统拆解论文、审视实验、提炼可迁移创新点与复现实验"
+  default_prompt: "Use $analyze-research-paper to deeply analyze this paper, compare baselines, and propose feasible research ideas."
