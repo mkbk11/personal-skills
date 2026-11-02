@@ -8,6 +8,7 @@
 | --- | --- | --- |
 | [beautiful-web-design](./beautiful-web-design/SKILL.md) | 设计、构建和优化美观、易用的响应式 Web 界面 | 落地页、仪表盘、Web 应用、React 组件、已有页面改版 |
 | [analyze-research-paper](./analyze-research-paper/SKILL.md) | 深度解读论文、审视实验结果、提炼可迁移研究 Idea | 论文精读、导师组会、模型复现、Baseline 分析、科研创新探索 |
+| [photo-coach](./photo-coach/SKILL.md) | 尼康拍摄指导、照片点评、后期修图与循序摄影练习 | 旅游、城市扫街、人像、风光、静物、运动摄影 |
 
 ## Beautiful Web Design
 
@@ -38,6 +39,20 @@
 > 分析时区分「论文事实」「核算结果」「推断」「研究建议」。如果论文未报告某项实验，明确标注“未报告”，不臆造指标或实验结论。
 
 详细规范见 [SKILL.md](./analyze-research-paper/SKILL.md)，以及 [论文分析模板](./analyze-research-paper/references/analysis-template.md)、[实验审查清单](./analyze-research-paper/references/experiment-audit.md)、[科研 Idea 指南](./analyze-research-paper/references/research-idea-lab.md)。
+
+## Photo Coach · 私人摄影导师
+
+`photo-coach` 面向摄影爱好者，强调**看懂自己的照片、在现场拍得更好、用练习真正进步**，而不只是提供固定参数。
+
+- **个性化器材建议**：参考此前讨论的 Nikon Z6II、NIKKOR Z 24–200mm f/4–6.3 VR 与 TTArtisan AF 50mm f/1.8 NEO，解释镜头选择、光圈、快门、ISO 和对焦的取舍。
+- **照片点评与选片**：指出画面真正有效的地方，优先提出 2–3 项具体改进，并区分后期可修复的问题与必须重拍的问题。
+- **场景实拍指南**：为旅行、扫街、夜景、人像、风光、静物、运动提供起始参数、现场调整思路和取景清单。
+- **后期修图**：给出 Lightroom / Camera Raw 等软件中的非破坏性调色、构图和局部处理流程。
+- **摄影陪练**：设计 15–30 分钟的小练习、照片故事与四周学习计划，逐步形成个人风格。
+
+> 这套器材来自此前的选购讨论，是否已购买尚未确认；Skill 会在实际使用时以最新器材为准。拍摄参数是随光线与主体运动调整的**起点**，并非万能预设。
+
+参考指南：[器材档案](./photo-coach/references/gear-profile.md) · [场景拍摄表](./photo-coach/references/shooting-playbooks.md) · [照片点评与后期](./photo-coach/references/critique-and-editing.md)。
 
 ## 安装
 
@@ -90,6 +105,20 @@ git clone https://github.com/mkbk11/personal-skills.git
 严格区分论文已验证结论与未验证假设。
 ```
 
+### 照片点评与尼康摄影指导
+
+```text
+使用 $photo-coach 点评我上传的这张照片。
+请先分析构图、光线、主体、色彩和清晰度，
+给出最值得改进的 3 点，区分后期处理和下次重拍建议。
+```
+
+```text
+使用 $photo-coach 为我的澳门城市扫街设计一个轻松的摄影练习。
+参考 Z6II、24–200mm 和 50mm f/1.8 的候选搭配，
+给出拍摄思路、起始参数、镜头选择与 5 个具体取景任务。
+```
+
 ### 创建新页面
 
 ```text
@@ -116,14 +145,22 @@ personal-skills/
 │   │   └── openai.yaml
 │   └── references/
 │       └── design-guidelines.md
-└── analyze-research-paper/
+├── analyze-research-paper/
+│   ├── SKILL.md
+│   ├── agents/
+│   │   └── openai.yaml
+│   └── references/
+│       ├── analysis-template.md
+│       ├── experiment-audit.md
+│       └── research-idea-lab.md
+└── photo-coach/
     ├── SKILL.md
     ├── agents/
     │   └── openai.yaml
     └── references/
-        ├── analysis-template.md
-        ├── experiment-audit.md
-        └── research-idea-lab.md
+        ├── gear-profile.md
+        ├── shooting-playbooks.md
+        └── critique-and-editing.md
 ```
 
 ## 反馈
