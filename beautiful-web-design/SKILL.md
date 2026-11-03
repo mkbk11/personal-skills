@@ -1,10 +1,6 @@
 ---
 name: beautiful-web-design
-description: Design, build, review, and improve polished,
-  responsive websites and web application interfaces.
-  Use for frontend UI creation, visual redesign, React
-  components, mobile-first layouts, design systems,
-  landing pages, dashboards, and web app interfaces.
+description: Design, build, review, and improve responsive websites and web application interfaces. Use when a user asks to create or redesign a frontend, build React components or pages, improve mobile-first layouts, define a design system, implement UI interactions, review visual hierarchy or accessibility, or audit an existing web app. Preserve existing project conventions and verify only what was actually tested.
 ---
 
 # Beautiful Web Design
