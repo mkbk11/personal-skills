@@ -1,0 +1,4 @@
+interface:
+  display_name: "Assignment Check · 作业检查"
+  short_description: "核对作业要求、语法、推导和代码过程；只提建议，不润色或代写"
+  default_prompt: "Use $check-assignment to review my homework against the requirements, flag issues and suggest how I can fix them myself. Do not rewrite, polish, complete, or expand my work."
