@@ -1,87 +1,143 @@
 # Personal Skills
 
-我的个人 AI Skills 工具箱：把经常使用的**网页开发、论文研究、摄影学习和作业检查**方法整理为可复用的工作流程，适用于支持 Agent Skills 的 ChatGPT、Codex 等环境（具体安装与调用方式取决于所用客户端）。
+[English](README.en.md) · **中文**
+
+一个面向 ChatGPT、Codex 及其他兼容 Agent Skills 的个人工作流工具箱。这里收录可复用的 AI 技能包，覆盖网页设计、学术论文阅读、摄影指导和作业检查。
+
+> **设计目标：自己用得顺手，也让第一次访问仓库的人能看懂、能安装、能贡献。**
+>
+> 当前仓库包含 4 个 Skill。详细使用教程以中文为主；每个 Skill 的核心执行文件为 `SKILL.md`。
 
 ## 技能目录
 
-| Skill | 一句话介绍 | 中文介绍与使用指南 | 执行规则 |
+| Skill | 适用场景 | 主要特点 | 中文指南 |
 | --- | --- | --- | --- |
-| **Beautiful Web Design** | 设计、实现与优化响应式 Web 界面，兼顾视觉质量、交互和可维护性 | [阅读指南](./docs/beautiful-web-design.md) | [SKILL.md](./beautiful-web-design/SKILL.md) |
-| **Analyze Research Paper** | 深度精读论文、分析 Baseline 与实验、挖掘可迁移的科研 Idea | [阅读指南](./docs/analyze-research-paper.md) | [SKILL.md](./analyze-research-paper/SKILL.md) |
-| **Photo Coach** | 个性化摄影指导、尼康参数建议、照片点评、后期与摄影陪练 | [阅读指南](./docs/photo-coach.md) | [SKILL.md](./photo-coach/SKILL.md) |
-| **Check Assignment** | 按作业要求检查语法、推导、代码和格式；只提建议，不润色、不代写 | [阅读指南](./docs/check-assignment.md) | [SKILL.md](./check-assignment/SKILL.md) |
-
-三份中文指南使用相同的结构：**技能定位 → 适用场景 → 核心能力 → 输入与输出 → 使用步骤 → 使用示例 → 建议与边界 → 参考资料**。
+| **Beautiful Web Design** | 网页、React 页面、移动端界面与 UI 改版 | 从需求梳理、视觉方向到交互与验收 | [使用指南](docs/beautiful-web-design.md) |
+| **Analyze Research Paper** | 学术论文精读、组会、复现与科研选题 | 拆解 Baseline、方法、实验和可迁移 Idea | [使用指南](docs/analyze-research-paper.md) |
+| **Photo Coach** | 摄影学习、照片点评、拍摄规划与后期 | 构图、曝光、镜头选择、修图和练习 | [使用指南](docs/photo-coach.md) |
+| **Check Assignment** | 课程作业、数学推导、代码、报告与 PPT 检查 | **只检查、定位问题和提建议，不润色、不代写** | [使用指南](docs/check-assignment.md) |
 
 ## 快速开始
 
-1. **选择技能**：从上表打开对应的中文指南，确认它能解决什么问题。
-2. **准备输入**：Web Design 提供需求或项目代码；Research Paper 提供论文 PDF/链接；Photo Coach 提供照片或拍摄场景；Check Assignment 提供作业要求和已完成的答案。
-3. **发起任务**：在已安装 Skill 的环境中，直接说明要使用的 Skill，再描述目标、限制和期望结果。
-4. **逐轮改进**：根据第一次输出追问、补充素材或要求调整；不要把演示代码、未复现实验或猜测参数当成已验证结果。
+### 1. 选择一个 Skill
 
-在支持个人 Skills 的 ChatGPT 中，可用 `@beautiful-web-design`、`@analyze-research-paper`、`@photo-coach`、`@check-assignment` 指定已安装的 Skill；在 Codex 等环境里，也可以使用对应的 `$skill-name` 形式（以实际客户端为准）。
+每个 Skill 都是一个独立目录，至少包含 `SKILL.md`，并可带有 `references/` 等辅助资料。你可以只安装需要的 Skill，不必安装整个仓库。
 
-需要可直接复制的完整提示词？请进入各自的**中文使用指南**：
+### 2. 安装
 
-- [Web Design：新建页面、现有项目改版与 UI 审查](./docs/beautiful-web-design.md#6-使用示例)
-- [Research Paper：论文精读、实验对比、组会与 Idea 迁移](./docs/analyze-research-paper.md#6-使用示例)
-- [Photo Coach：照片点评、扫街、夜景人像、修图与选片](./docs/photo-coach.md#6-使用示例)
-- [Check Assignment：语法、数学推导、代码与提交前检查](./docs/check-assignment.md#6-使用示例)
+**Codex（个人级安装）**
 
-## 安装说明
-
-如果 Skill 已安装到当前环境，**无需重复下载**。只有在另一台设备、另一种 Agent 或新的安装环境中使用时，才需要根据该环境的要求安装。
-
-在支持 GitHub Skill 目录安装的 Codex 环境中，可以指定单个目录，例如：
-
-```text
-$skill-installer 请安装以下 GitHub 目录中的技能：
-https://github.com/mkbk11/personal-skills/tree/main/photo-coach
-```
-
-将链接中的 `photo-coach` 换成 `beautiful-web-design`、`analyze-research-paper` 或 `check-assignment`，即可指定其他技能。安装命令是否可用取决于客户端。
-
-也可以下载仓库：
+将所需 Skill 文件夹复制到 `~/.agents/skills/`：
 
 ```bash
 git clone https://github.com/mkbk11/personal-skills.git
+mkdir -p ~/.agents/skills
+cp -R personal-skills/analyze-research-paper ~/.agents/skills/
 ```
 
-按目标 Agent 的文档，将**整个 Skill 文件夹**放到相应的 Skills 目录，并保留其中的 `SKILL.md`、`agents/`、`references/`。注意：仅复制 `docs/` 中的中文指南，不等于安装 Skill。
+Windows PowerShell 示例：
+
+```powershell
+git clone https://github.com/mkbk11/personal-skills.git
+New-Item -ItemType Directory -Force "$HOME\.agents\skills" | Out-Null
+Copy-Item ".\personal-skills\analyze-research-paper" "$HOME\.agents\skills\" -Recurse
+```
+
+**ChatGPT**
+
+如果你的账号或工作空间已开放 Skills 功能，可在 Skills 页面选择 **Create → Upload from computer**，上传单个 Skill 文件夹的 ZIP。功能可用性、上传权限和共享方式以账号及工作空间设置为准。
+
+**其他 Agent**
+
+Agent Skills 是开放格式，但各客户端的安装目录、调用方式和支持能力可能不同。请按目标客户端的官方说明安装；不要假设一个命令或路径适用于所有产品。
+
+完整步骤、目录结构和常见问题见 [安装与调用指南](docs/installation.md)。
+
+### 3. 调用
+
+- **ChatGPT（已开放 Skills 功能且安装完成）**：在提示词中使用 `@skill-name` 选择 Skill，或让 ChatGPT 根据任务自动选择。
+- **Codex**：使用 `$skill-name` 显式调用；也可以通过 `/skills` 查看可用技能。
+- **其他 Agent**：使用该客户端支持的调用方式。
+
+例如：
+
+```text
+请使用 analyze-research-paper 深度阅读我上传的论文，
+重点分析 Baseline、方法、实验和可迁移的研究思路。
+```
+
+## 适合谁使用？
+
+- **学生与研究者**：论文阅读、实验分析、作业检查和学术表达复核。
+- **开发者与产品设计者**：网页 UI 设计、前端实现和交互审查。
+- **摄影爱好者**：拍摄参数、照片点评、后期思路和练习计划。
+- **Skill 作者**：参考目录组织、说明文档和维护流程，创建自己的 Skill。
+
+## 个性化内容说明
+
+本仓库源于维护者的真实使用场景，但不要求其他用户拥有相同背景或设备：
+
+- Research Paper 的示例会涉及计算机视觉和点云研究；其他领域可按论文类型调整。
+- Photo Coach 中提到的 Nikon 器材是维护者曾讨论的参考配置，**不代表所有使用者拥有这些器材**；使用前应替换为自己的设备。
+- Beautiful Web Design 的项目示例不限制实际技术栈。
+- Check Assignment 默认只提供诊断与自查建议，不会直接改写或补全作业。
 
 ## 仓库结构
 
 ```text
 personal-skills/
-├── README.md                         # 简洁首页与导航
-├── docs/                             # 面向使用者的统一中文指南
+├── README.md
+├── README.en.md
+├── AGENTS.md
+├── CONTRIBUTING.md
+├── CODE_OF_CONDUCT.md
+├── SECURITY.md
+├── CHANGELOG.md
+├── requirements-dev.txt
+├── scripts/
+│   └── validate_skills.py
+├── .github/
+│   ├── ISSUE_TEMPLATE/
+│   └── workflows/
+├── docs/                         # 面向使用者的中文指南
+│   ├── installation.md
 │   ├── beautiful-web-design.md
 │   ├── analyze-research-paper.md
 │   ├── photo-coach.md
 │   └── check-assignment.md
 ├── beautiful-web-design/
-│   ├── SKILL.md                       # AI 执行规则
-│   ├── agents/
-│   └── references/
 ├── analyze-research-paper/
-│   ├── SKILL.md
-│   ├── agents/
-│   └── references/
 ├── photo-coach/
-│   ├── SKILL.md
-│   ├── agents/
-│   └── references/
 └── check-assignment/
-    ├── SKILL.md
-    ├── agents/
-    └── references/
 ```
 
-- `docs/*.md`：给人阅读的中文介绍、使用教程和可复制提示词。
-- `<skill-name>/SKILL.md`：Agent 根据任务触发后遵循的正式工作流程。
-- `references/`：该 Skill 的深入规则、范例和检查清单；`agents/`：显示与调用相关的元信息。
+每个 Skill 目录内包含：
 
-## 反馈与改进
+- `SKILL.md`：核心触发条件与执行规则。
+- `agents/openai.yaml`：OpenAI 客户端可使用的可选界面元数据。
+- `references/`：按需读取的详细指南、检查表或参考资料。
 
-欢迎通过 [GitHub Issues](https://github.com/mkbk11/personal-skills/issues) 提交使用建议。最好附上具体任务、期望效果、实际结果以及需要改进的环节。
+## 设计原则
+
+1. **Portable first**：尽量遵循开放的 Agent Skills 文件结构，避免依赖单一客户端。
+2. **Progressive disclosure**：核心规则放在 `SKILL.md`，细节放入 `references/`，按需加载。
+3. **Evidence over confidence**：不编造来源、实验结果、设备参数或验证结论。
+4. **Clear boundaries**：明确 Skill 能做什么、不能做什么，以及哪些操作需要用户确认。
+5. **Maintainable**：修改 Skill 行为时，同步更新对应中文指南和示例。
+
+## 贡献与反馈
+
+欢迎提出问题、建议新 Skill 或提交改进：
+
+- [贡献指南](CONTRIBUTING.md)
+- [提交 Bug / 使用问题](https://github.com/mkbk11/personal-skills/issues/new?template=bug_report.md)
+- [提出新功能或 Skill](https://github.com/mkbk11/personal-skills/issues/new?template=feature_request.md)
+- [安全问题报告](SECURITY.md)
+
+## 许可与使用
+
+**当前仓库尚未添加 LICENSE 文件。** 仓库公开可见不等于已经授予复制、修改、再发布或商业使用的许可。在维护者明确选择并添加许可证之前，请不要默认将内容视为可自由再分发。
+
+---
+
+Agent Skills 格式参考：[Agent Skills Specification](https://agentskills.io/specification)。
